@@ -4,10 +4,16 @@
 
 - Prompt user for location
 - Display a recommendation of what to wear to the user
-- Display a log of past weather requests with weather, recommendation, and option to edit or delete ... but like, why?
 
 ## Todos
-- Weather & ChatGPT API integration - DONE
-- Use RESTful API structure
-- Make a class / microcontroller
-- Write tests
+
+- change services to classes
+- convert controller responses in to API responses
+  - include headers, lol.
+- write unit tests for services and both controllers
+- React FE (will replace templates)
+
+## Extended features
+
+- sign up for daily emails (twilio?) with location and rec
+- can ask chatgpt to return data in specific ways, or format specifically, can be helpful to store in db with correct formatting. Possibilities ~~~~~
