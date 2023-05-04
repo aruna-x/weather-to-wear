@@ -7,9 +7,7 @@
 
 ## Todos
 
-- change services to classes (DONE)
 - convert controller responses in to API responses
-  - include headers, lol.
 - write unit tests for services and both controllers
 - React FE (will replace templates) -- use Material UI
 

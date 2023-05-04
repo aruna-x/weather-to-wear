@@ -9,7 +9,7 @@ load_dotenv()
 
 @main.route('/')
 def index():
-  return render_template('main.html'), 200
+  return render_template('main.html')
 
 @main.route('/rec')
 def get_rec():
@@ -23,7 +23,7 @@ def get_rec():
     weather = resp.json()
     openai = Openai()
     rec = openai.get_chat_rec(weather)
-    return render_template('rec.html', rec=rec.choices[0].message.content), 200
+    return render_template('rec.html', rec=rec.choices[0].message.content)
   
   else:
     print(f'Danger Will Robinson: {resp.status_code}')
