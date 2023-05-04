@@ -7,9 +7,15 @@
 
 ## Todos
 
-- convert controller responses in to API responses
+- React FE (will replace templates)
+  - header component
+  - location api
+  - fetch after button click
+    - convert controller responses in to API responses (jsonify)
+  - replace ui with res (do router last)
+  - routes
+
 - write unit tests for services and both controllers
-- React FE (will replace templates) -- use Material UI
 
 ## Extended features
 
