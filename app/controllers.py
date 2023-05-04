@@ -27,4 +27,4 @@ def get_rec():
   
   else:
     print(f'Danger Will Robinson: {resp.status_code}')
-    return 'Oops, there was an error!', 400
+    return 'Oops, there was an error!', resp.status_code
