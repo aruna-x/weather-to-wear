@@ -7,6 +7,8 @@
 
 ## Todos
 
+- ADD VITE BABY :D - DONE
+
 - React FE (will replace templates)
   - header component
   - location api
@@ -16,6 +18,10 @@
   - routes
 
 - write unit tests for services and both controllers
+- jasmine?
+- spec?
+
+- after 1st milestone is met: add DB
 
 ## Extended features
 
