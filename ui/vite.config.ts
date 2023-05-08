@@ -6,22 +6,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   server: {
-    open: "index.html",
+    open: "/",
   },
   root: 'public',
-  build: {
-    outDir: "../dist",
-    rollupOptions: {
-      input: {
-        app: './public/index.html',
-      }
-    }
-  },
   resolve: {
     alias: { "/src": path.resolve(process.cwd(), "src") }
   },
-  // build: {
-  //   rollupOptions: {
-  //     input: {
-  //       app: './public/index.html',
 })
