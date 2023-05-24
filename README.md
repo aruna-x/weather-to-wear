@@ -7,11 +7,9 @@
 
 ## Todos
 
-- ADD VITE BABY :D - DONE
-
 - React FE (will replace templates)
-  - header component
-  - location api
+  - integrate google autocomplete api - DONE
+  - style autocomplete dropdown
   - fetch after button click
     - convert controller responses in to API responses (jsonify)
   - replace ui with res (do router last)
@@ -27,3 +25,8 @@
 
 - sign up for daily emails (twilio?) with location and rec
 - can ask chatgpt to return data in specific ways, or format specifically, can be helpful to store in db with correct formatting. Possibilities ~~~~~
+
+## Reminders
+
+- google api key used for this project is restricted to my IP address for security reason, because weirdly api key has to be publicly exposed via index.html
+
