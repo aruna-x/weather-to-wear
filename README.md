@@ -8,7 +8,7 @@
 ## Todos
 
 - React FE (will replace templates)
-  - integrate google autocomplete api - DONE
+  - upgrate flask to >=2.2.5 ("Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header") - DONE
   - style autocomplete dropdown
   - fetch after button click
     - convert controller responses in to API responses (jsonify)
