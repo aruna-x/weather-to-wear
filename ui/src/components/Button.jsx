@@ -1,20 +1,44 @@
 import styled from 'styled-components';
 
-function Button({name}) {
+async function getRec(city) {
+  await fetch(`http://localhost:5000/rec`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({'city': city})
+  })
+  .then(r => {
+    console.log()
+    if(r.ok) {
+      return r.json;
+    }
+    else {
+      // throw new Error('Oops! There was an issue', r.error);
+      console.log('Oops! There was an issue', r.error);
+    }
+  })
+  .then(rec => {
+    console.log(rec)
+  })
+}
+
+function Button({name, city}) {
   return (
-    <StyledButton>{name}</StyledButton>
+    <StyledButton onClick={()=> getRec(city)}>{name}</StyledButton>
   )
 }
 
 export default Button;
 
-// must review this ... Can recreate differently?
+// must review this ... Can pare down?
 const StyledButton = styled.button`
   font-size: 16px;
   font-weight: 200;
   letter-spacing: 1px;
   padding: 13px 20px;
-  margin: 10px;
+  height: 48px;
+  margin: 0px 10px;
   outline: 0;
   border: 1px solid #373737;
   cursor: pointer;

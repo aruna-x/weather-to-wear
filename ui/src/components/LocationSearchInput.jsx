@@ -1,42 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PlacesAutocomplete from 'react-places-autocomplete';
  
-function LocationSearchInput() {
-  const [address, setAddress] = useState('')
-  function handleChange(address) {
-    setAddress(address)
-  };
+function LocationSearchInput({city, setCity}) {
+  const searchOptions = {
+    types: ['(cities)'],
+  }
 
-  function handleSelect(address) {
-    setAddress(address);
-  };
+  function handleChange(city) {
+    setCity(city)
+  }
+
+  function handleSelect(city) {
+    setCity(city);
+  }
 
   return (
     <PlacesAutocomplete
-      value={address}
+      value={city}
       onChange={handleChange}
       onSelect={handleSelect}
+      searchOptions={searchOptions}
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <div>
           <StyledInput {...getInputProps({placeholder: 'Enter your location (e.g. city) ...'})}/>
           <div>
             {loading && <div>Loading...</div>}
-            {suggestions.map(suggestion => {
-              const className = suggestion.active
-                ? 'suggestion-item--active'
-                : 'suggestion-item';
-              const style = suggestion.active
-                ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                : { backgroundColor: '#ffffff', cursor: 'pointer' };
-              return (
-                // style me! :)
-                <div {...getSuggestionItemProps(suggestion, { className, style })}>
-                  <span>{suggestion.description}</span>
-                </div>
-              );
-            })}
+            {suggestions.map(suggestion => (
+              <DropdownItem {...getSuggestionItemProps(suggestion)}>
+                <span>{suggestion.description}</span>
+              </DropdownItem>
+            ))}
           </div>
         </div>
       )}
@@ -54,4 +49,17 @@ const StyledInput = styled.input`
   font-weight: 200;
   letter-spacing: 1px;
   width: 20em;
+`
+
+const DropdownItem = styled.div`
+  width: 25vw;
+  margin: 7px auto;
+  padding: auto;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+  }
 `

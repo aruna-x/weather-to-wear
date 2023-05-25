@@ -8,8 +8,6 @@
 ## Todos
 
 - React FE (will replace templates)
-  - upgrate flask to >=2.2.5 ("Flask vulnerable to possible disclosure of permanent session cookie due to missing Vary: Cookie header") - DONE
-  - style autocomplete dropdown
   - fetch after button click
     - convert controller responses in to API responses (jsonify)
   - replace ui with res (do router last)
