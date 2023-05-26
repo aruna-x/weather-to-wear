@@ -11,11 +11,9 @@ load_dotenv()
 def index():
   return render_template('main.html')
 
-@main.route('/rec', methods = ['POST'])
+@main.route('/rec', methods = ['POST', 'GET'])
 def get_rec():
-  print('HERE ...')
-  city = request.json.values()
-  print(city)
+  city = request.form
   weather = Weather()
   resp = weather.get_weather(city)
 
@@ -23,7 +21,6 @@ def get_rec():
     weather = resp.json()
     openai = Openai()
     rec = openai.get_chat_rec(weather)
-    print(rec)
     return jsonify(rec.choices[0].message.content)
   
   else:

@@ -6,10 +6,9 @@ async function getRec(city) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({'city': city})
+    body: JSON.stringify(city)
   })
   .then(r => {
-    console.log()
     if(r.ok) {
       return r.json;
     }

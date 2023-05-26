@@ -8,6 +8,7 @@
 ## Todos
 
 - React FE (will replace templates)
+  - fix cors issue
   - fetch after button click
     - convert controller responses in to API responses (jsonify)
   - replace ui with res (do router last)
