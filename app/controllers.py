@@ -13,16 +13,21 @@ def index():
 
 @main.route('/rec', methods = ['POST', 'GET'])
 def get_rec():
-  city = request.form
-  weather = Weather()
-  resp = weather.get_weather(city)
+  try:
+    city = request.form.get('city')
+    weather = Weather()
+    resp = weather.get_weather(city)
 
-  if resp.status_code == 200:
-    weather = resp.json()
-    openai = Openai()
-    rec = openai.get_chat_rec(weather)
-    return jsonify(rec.choices[0].message.content)
-  
-  else:
-    print(f'Danger Will Robinson: {resp.status_code}')
-    return 'Oops, there was an error!', resp.status_code
+    if resp.status_code == 200:
+      weather = resp.json()
+      openai = Openai()
+      rec = openai.get_chat_rec(weather)
+      return jsonify(rec.choices[0].message.content)
+    
+    else:
+      print(f'Danger Will Robinson: {resp.status_code}')
+      return 'Oops, there was an error!', resp.status_code
+  except:
+    print('Oops, there was an error with external api calls!')
+    return 'Oops, there was an error with external api calls!', 500 
+

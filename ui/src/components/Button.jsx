@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 async function getRec(city) {
-  await fetch(`http://localhost:5000/rec`, {
+  await fetch('/api/rec', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -10,11 +10,10 @@ async function getRec(city) {
   })
   .then(r => {
     if(r.ok) {
-      return r.json;
+      return r.json();
     }
     else {
-      // throw new Error('Oops! There was an issue', r.error);
-      console.log('Oops! There was an issue', r.error);
+      console.log('Oops! There was an issue', r);
     }
   })
   .then(rec => {
