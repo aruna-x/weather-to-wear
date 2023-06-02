@@ -1,27 +1,27 @@
 import styled from 'styled-components';
 
-async function getRec(city) {
-  await fetch('/api/rec', {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(city)
-  })
-  .then(r => {
-    if(r.ok) {
-      return r.json();
-    }
-    else {
-      console.log('Oops! There was an issue', r);
-    }
-  })
-  .then(rec => {
-    console.log(rec)
-  })
-}
+function Button({name, city, setRec}) {
+  async function getRec(city) {
+    await fetch('/api/rec', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({city: city})
+    })
+    .then(r => {
+      if(r.ok) {
+        return r.json();
+      }
+      else {
+        console.log('Oops! There was an issue', r);
+      }
+    })
+    .then(rec => {
+      setRec(rec)
+    })
+  }
 
-function Button({name, city}) {
   return (
     <StyledButton onClick={()=> getRec(city)}>{name}</StyledButton>
   )

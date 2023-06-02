@@ -14,7 +14,7 @@ def index():
 @main.route('/rec', methods = ['POST', 'GET'])
 def get_rec():
   try:
-    city = request.form.get('city')
+    city = request.get_json()['city']
     weather = Weather()
     resp = weather.get_weather(city)
 
@@ -30,4 +30,3 @@ def get_rec():
   except:
     print('Oops, there was an error with external api calls!')
     return 'Oops, there was an error with external api calls!', 500 
-
