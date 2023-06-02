@@ -1,26 +1,28 @@
 # Weather to Wear
 
-## Deliverables
+## Spin 'er up!
 
-- Prompt user for location
-- Display a recommendation of what to wear to the user
+- `npm start` (vite) from `/ui`
+- `flask run` from root
 
-## Todos
+## UX
 
-- loading indicator
+- Prompts user for location
+- Provides autocomplete
+- Displays a recommendation of what to wear in that location today
 
-- write unit tests for services and both controllers
-- jasmine?
-- spec?
+## Integrations
 
-- after 1st milestone is met: add DB
+- openai using `gpt-3.5-turbo`
+- weatherapi
+- google places api via `react-places-autocomplete`
 
-## Extended features
+## Extended features (WIP)
 
-- sign up for daily emails (twilio?) with location and rec
-- can ask chatgpt to return data in specific ways, or format specifically, can be helpful to store in db with correct formatting. Possibilities ~~~~~
+- daily email subscription
+- share options
+- convert to chatbot
 
-## Reminders
+## Notes
 
-- google api key used for this project is restricted to my IP address for security reason, because weirdly api key has to be publicly exposed via index.html
-
+- The google api key used for this project has to be publicly exposed via `index.html`. Go to the Google Console, and generate then add your key to line 13 of `index.html`.
