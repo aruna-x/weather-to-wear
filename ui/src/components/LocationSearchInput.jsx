@@ -28,7 +28,7 @@ function LocationSearchInput({city, setCity}) {
           <div>
             {loading && <div>Loading...</div>}
             {suggestions.map(suggestion => (
-              <DropdownItem {...getSuggestionItemProps(suggestion)}>
+              <DropdownItem key={suggestion.description} {...getSuggestionItemProps(suggestion)}>
                 <span>{suggestion.description}</span>
               </DropdownItem>
             ))}
