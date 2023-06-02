@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-function Button({name, city, setRec}) {
+function Button({name, city, setRec, setLoading}) {
   async function getRec(city) {
+    setLoading(true);
     await fetch('/api/rec', {
       method: "POST",
       headers: {
@@ -19,6 +20,7 @@ function Button({name, city, setRec}) {
     })
     .then(rec => {
       setRec(rec)
+      setLoading(false);
     })
   }
 

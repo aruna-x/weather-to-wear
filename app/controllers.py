@@ -27,6 +27,6 @@ def get_rec():
     else:
       print(f'Danger Will Robinson: {resp.status_code}')
       return 'Oops, there was an error!', resp.status_code
-  except:
-    print('Oops, there was an error with external api calls!')
+  except Exception as e:
+    print('Oops, there was an error with external api calls!', e)
     return 'Oops, there was an error with external api calls!', 500 
