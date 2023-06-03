@@ -25,4 +25,4 @@
 
 ## Notes
 
-- The google api key used for this project has to be publicly exposed via `index.html`. Go to the Google Console, and generate then add your key to line 13 of `index.html`.
+- The Google Cloud API key used for this project has to be publicly exposed via `index.html`. Go to the Google Console, generate a key, add Geocoding API, Maps JavaScript API, Places API, add restrictions for safety, then place your key on line 13 of `index.html`.
