@@ -17,7 +17,6 @@ def get_rec():
     city = request.get_json()['city']
     weather = Weather()
     resp = weather.get_weather(city)
-
     if resp.status_code == 200:
       weather = resp.json()
       openai = Openai()

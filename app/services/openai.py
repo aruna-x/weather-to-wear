@@ -1,6 +1,8 @@
 import os
 import openai
 
+from . import finalprompt
+
 class Openai:
   def __init__(self):
     openai.api_key = os.getenv('OPENAI_KEY')
@@ -14,5 +16,5 @@ class Openai:
     )
   
   def get_chat_rec(self, weather):
-    prompt = f'What would you recommend wearing in this weather? {weather}'
+    prompt = finalprompt.build(weather)
     return self.send_prompt(prompt)
